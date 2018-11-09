@@ -9,8 +9,14 @@ package ohtu.verkkokauppa;
  *
  * @author mclipsan
  */
-public interface pankkiIO {
+public interface VarastoIO {
 
-    boolean tilisiirto(String nimi, int viitenumero, String tililta, String tilille, int summa);
+    Tuote haeTuote(int id);
+
+    void otaVarastosta(Tuote t);
+
+    void palautaVarastoon(Tuote t);
+
+    int saldo(int id);
     
 }

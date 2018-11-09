@@ -9,14 +9,8 @@ package ohtu.verkkokauppa;
  *
  * @author mclipsan
  */
-public interface varastoIO {
+public interface ViiteIO {
 
-    Tuote haeTuote(int id);
-
-    void otaVarastosta(Tuote t);
-
-    void palautaVarastoon(Tuote t);
-
-    int saldo(int id);
+    int uusi();
     
 }

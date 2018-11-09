@@ -2,13 +2,13 @@ package ohtu.verkkokauppa;
 
 public class Kauppa {
 
-    private varastoIO vaIO;
-    private pankkiIO paIO;
+    private VarastoIO vaIO;
+    private PankkiIO paIO;
     private Ostoskori ostoskori;
-    private viiteIO viIO;
+    private ViiteIO viIO;
     private String kaupanTili;
 
-    public Kauppa(varastoIO vaIO, pankkiIO paIO, viiteIO viIO ) {
+    public Kauppa(VarastoIO vaIO, PankkiIO paIO, ViiteIO viIO ) {
         this.vaIO = vaIO;
         this.paIO = paIO;
         this.viIO = viIO;

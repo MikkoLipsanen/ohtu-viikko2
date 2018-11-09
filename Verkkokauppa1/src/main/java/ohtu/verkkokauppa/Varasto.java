@@ -2,23 +2,13 @@ package ohtu.verkkokauppa;
 
 import java.util.*;
 
-public class Varasto implements varastoIO {
-
-    private static Varasto instanssi;
-
-    public static Varasto getInstance() {
-        if (instanssi == null) {
-            instanssi = new Varasto();
-        }
-
-        return instanssi;
-    }
+public class Varasto implements VarastoIO {
     
-    private Kirjanpito kirjanpito;
+    private KirjanpitoIO kirIO;
     private HashMap<Tuote, Integer> saldot;  
     
-    private Varasto() {
-        kirjanpito = Kirjanpito.getInstance();
+    public Varasto(KirjanpitoIO kirIO) {
+        this.kirIO = kirIO;
         saldot = new HashMap<Tuote, Integer>();
         alustaTuotteet();
     }
@@ -40,13 +30,13 @@ public class Varasto implements varastoIO {
     @Override
     public void otaVarastosta(Tuote t){        
         saldot.put(t,  saldo(t.getId())-1 );
-        kirjanpito.lisaaTapahtuma("otettiin varastosta "+t);
+        kirIO.lisaaTapahtuma("otettiin varastosta "+t);
     }
     
     @Override
     public void palautaVarastoon(Tuote t){
         saldot.put(t,  saldo(t.getId())+1 );
-        kirjanpito.lisaaTapahtuma("palautettiin varastoon "+t);
+        kirIO.lisaaTapahtuma("palautettiin varastoon "+t);
     }    
     
     private void alustaTuotteet() {

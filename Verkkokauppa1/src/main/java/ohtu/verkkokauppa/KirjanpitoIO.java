@@ -5,12 +5,16 @@
  */
 package ohtu.verkkokauppa;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author mclipsan
  */
-public interface viiteIO {
+public interface KirjanpitoIO {
 
-    int uusi();
+    ArrayList<String> getTapahtumat();
+
+    void lisaaTapahtuma(String tapahtuma);
     
 }
