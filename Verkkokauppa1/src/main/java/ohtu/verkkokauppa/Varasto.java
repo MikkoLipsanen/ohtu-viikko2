@@ -7,6 +7,7 @@ public class Varasto implements VarastoIO {
     private KirjanpitoIO kirIO;
     private HashMap<Tuote, Integer> saldot;  
     
+    
     public Varasto(KirjanpitoIO kirIO) {
         this.kirIO = kirIO;
         saldot = new HashMap<Tuote, Integer>();

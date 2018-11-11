@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Kirjanpito implements KirjanpitoIO {
      
     private ArrayList<String> tapahtumat;
-    private KirjanpitoIO kirIO;
+        private KirjanpitoIO kirIO;
 
     public Kirjanpito() {
         this.kirIO = kirIO;
