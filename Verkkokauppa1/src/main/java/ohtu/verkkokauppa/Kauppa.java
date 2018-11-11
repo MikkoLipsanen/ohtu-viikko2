@@ -9,7 +9,7 @@ public class Kauppa {
     private Ostoskori ostoskori;
     private String kaupanTili;
 
-    public Kauppa(VarastoIO vaIO, PankkiIO paIO, ViiteIO viIO) {
+    public Kauppa() {
         
         this.vaIO = vaIO;
         this.paIO = paIO;
